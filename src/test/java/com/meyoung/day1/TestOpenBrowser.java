@@ -14,6 +14,9 @@ public class TestOpenBrowser {
     @Test
     public void OpenFirefox(){
         WebDriver firefoxDriver = new FirefoxDriver();
+        //链接需要写上http
+        firefoxDriver.get("http://www.baidu.com");
+        firefoxDriver.quit();
     }
 
     @Test
@@ -26,6 +29,9 @@ public class TestOpenBrowser {
     public void OpenChrome(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\61619\\IdeaProjects\\SeleniumDemo1701\\drivers\\chromedriver.exe");
         WebDriver chromeDriver = new ChromeDriver();
+        //链接需要写上http
+        chromeDriver.navigate().to("http://www.baidu.com");
+        chromeDriver.quit();
     }
 
     @Test
@@ -38,6 +44,8 @@ public class TestOpenBrowser {
     public void OpenEdge(){
         System.setProperty("webdriver.edge.driver","C:\\Users\\61619\\IdeaProjects\\SeleniumDemo1701\\drivers\\MicrosoftWebDriver.exe");
         WebDriver edgeDriver = new EdgeDriver();
+        edgeDriver.get("http://www.baidu.com");
+        edgeDriver.quit();
     }
 
 }

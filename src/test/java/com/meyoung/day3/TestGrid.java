@@ -13,26 +13,24 @@ public class TestGrid {
     @Test
     public void testChrome() throws Exception{
         //实例化DesiredCapabilities 类
-        DesiredCapabilities dc = DesiredCapabilities.internetExplorer();
+        DesiredCapabilities dc = DesiredCapabilities.chrome();
         //实例化一个driver
         WebDriver driver = new RemoteWebDriver(new URL("http://192.168.1.28:4444/wd/hub"),dc);
+        driver.get("http://www.baidu.com");
         Thread.sleep(2000);
-        driver.get("https://www.baidu.com");
-        Thread.sleep(3000);
         driver.quit();
     }
 
     @DataProvider(name="data1")
     public Object [][] test1(){
         return new Object[][]{
-                {"firefox"},{"chrome"}
+                {"http://192.168.1.28:5555","firefox"},
+                {"http://192.168.1.28:6666","chrome"}
         };
     }
 
-
-
     @Test(dataProvider = "data1")
-    public void testGird2(String browser)throws Exception{
+    public void testGird2(String nodeUrl,String browser)throws Exception{
         DesiredCapabilities dc = null;
         if(browser.equals("chrome")){
             dc = DesiredCapabilities.chrome();
@@ -42,9 +40,9 @@ public class TestGrid {
             System.err.println("error");
         }
 
-        WebDriver driver = new RemoteWebDriver(new URL("http://192.168.1.28:4444/wd/hub"),dc);
+        WebDriver driver = new RemoteWebDriver(new URL(nodeUrl+"/wd/hub"),dc);
         driver.get("https://www.baidu.com");
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         driver.quit();
     }
 }

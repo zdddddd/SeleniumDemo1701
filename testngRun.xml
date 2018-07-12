@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--并发3个-->
+<suite name="Suite" parallel="methods" thread-count="3">
+  <test name="SeleniumDemo">
+    <classes>
+      <!--用例文件的路径-->
+      <!--如果有多个用例文件，就配置多个class-->
+      <class name="com.meyoung.day3.TestGrid">
+        <!--执行那些方法，如果不屑methods，那么该文件下所有方法都执行-->
+        <methods>
+          <!--执行这个方法-->
+          <include name="testGird2"/>
+          <!--不执行这个方法-->
+          <exclude name="testChrome"/>
+        </methods>
+      </class> <!-- com.meyoung.day3.TestGrid -->
+    </classes>
+  </test> <!-- SeleniumDemo1701 -->
+</suite> <!-- Default Suite -->

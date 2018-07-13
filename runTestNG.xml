@@ -10,7 +10,7 @@
         <!--执行那些方法，如果不屑methods，那么该文件下所有方法都执行-->
         <methods>
           <!--执行这个方法-->
-          <include name="testGird2"/>
+          <include name="testFail"/>
           <!--不执行这个方法-->
           <exclude name="testChrome"/>
         </methods>

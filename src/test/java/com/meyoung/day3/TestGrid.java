@@ -30,8 +30,8 @@ public class TestGrid {
         WebDriver driver = new RemoteWebDriver(new URL("http://192.168.1.28:4444/wd/hub"),dc);
         driver.get("http://www.baidu.com");
         Thread.sleep(2000);
-        Assert.assertTrue(false);
         driver.quit();
+        Assert.assertTrue(false);
     }
 
 
